@@ -25,8 +25,8 @@
 			<Add directory="$(#qt4.include)/QtGui" />
 		</Compiler>
 		<Linker>
-			<Add library="QtCore" />
-			<Add library="QtGui" />
+			<Add library="QtCore4" />
+			<Add library="QtGui4" />
 			<Add directory="$(#qt4.lib)" />
 		</Linker>
 		<Unit filename="main.cpp" />
