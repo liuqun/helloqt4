@@ -16,7 +16,7 @@
 		</MakeCommands>
 		<Build>
 			<Target title="debug">
-				<Option output="debug/helloqt4" prefix_auto="1" extension_auto="1" />
+				<Option output="helloqt4" prefix_auto="1" extension_auto="1" />
 				<Option object_output="debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -33,7 +33,7 @@
 				</MakeCommands>
 			</Target>
 			<Target title="release">
-				<Option output="release/helloqt4" prefix_auto="1" extension_auto="1" />
+				<Option output="helloqt4" prefix_auto="1" extension_auto="1" />
 				<Option object_output="release/" />
 				<Option type="0" />
 				<Option compiler="gcc" />
@@ -56,10 +56,7 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Linker>
-		</Linker>
 		<ExtraCommands>
-			<Add before="qmake -project" />
 			<Add before="qmake" />
 		</ExtraCommands>
 		<Unit filename="main.cpp" />
