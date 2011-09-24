@@ -7,34 +7,37 @@
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<MakeCommands>
-			<Build command="$make -f $makefile $target" />
+			<Build command="$make -f $makefile" />
 			<CompileFile command="$make -f $makefile $file" />
-			<Clean command="$make -f $makefile $target-clean" />
-			<DistClean command="$make -f $makefile distclean$target" />
-			<AskRebuildNeeded command="$make -q -f $makefile $target" />
-			<SilentBuild command="$make -s -f $makefile $target" />
+			<Clean command="$make -f $makefile clean" />
+			<DistClean command="$make -f $makefile distclean" />
+			<AskRebuildNeeded command="$make -q -f $makefile" />
+			<SilentBuild command="$make -s -f $makefile" />
 		</MakeCommands>
 		<Build>
 			<Target title="debug">
-				<Option output="helloqt4" prefix_auto="1" extension_auto="1" />
-				<Option object_output="debug/" />
+				<Option output="debug/helloqt4" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="debug" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
+				<ExtraCommands>
+					<Add before='qmake -makefile -o $makefile &quot;CONFIG+=debug&quot; &quot;DESTDIR=debug&quot;' />
+				</ExtraCommands>
 				<MakeCommands>
-					<Build command="$make -f $makefile $target" />
+					<Build command="$make -f $makefile" />
 					<CompileFile command="$make -f $makefile $file" />
-					<Clean command="$make -f $makefile $target-clean" />
-					<DistClean command="$make -f $makefile distclean$target" />
-					<AskRebuildNeeded command="$make -q -f $makefile $target" />
-					<SilentBuild command="$make -s -f $makefile $target" />
+					<Clean command="$make -f $makefile clean" />
+					<DistClean command="$make -f $makefile distclean" />
+					<AskRebuildNeeded command="$make -q -f $makefile" />
+					<SilentBuild command="$make -s -f $makefile" />
 				</MakeCommands>
 			</Target>
 			<Target title="release">
-				<Option output="helloqt4" prefix_auto="1" extension_auto="1" />
-				<Option object_output="release/" />
+				<Option output="release/helloqt4" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="release" />
 				<Option type="0" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -43,13 +46,16 @@
 				<Linker>
 					<Add option="-s" />
 				</Linker>
+				<ExtraCommands>
+					<Add before='qmake -makefile -o $makefile &quot;DESTDIR=release&quot;' />
+				</ExtraCommands>
 				<MakeCommands>
-					<Build command="$make -f $makefile $target" />
+					<Build command="$make -f $makefile" />
 					<CompileFile command="$make -f $makefile $file" />
-					<Clean command="$make -f $makefile $target-clean" />
-					<DistClean command="$make -f $makefile distclean$target" />
-					<AskRebuildNeeded command="$make -q -f $makefile $target" />
-					<SilentBuild command="$make -s -f $makefile $target" />
+					<Clean command="$make -f $makefile clean" />
+					<DistClean command="$make -f $makefile distclean" />
+					<AskRebuildNeeded command="$make -q -f $makefile" />
+					<SilentBuild command="$make -s -f $makefile" />
 				</MakeCommands>
 			</Target>
 		</Build>
@@ -57,7 +63,7 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<ExtraCommands>
-			<Add before="qmake" />
+			<Add before="qmake -project" />
 		</ExtraCommands>
 		<Unit filename="main.cpp" />
 		<Extensions>
