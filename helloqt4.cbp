@@ -24,6 +24,7 @@
 					<Add option="-g" />
 				</Compiler>
 				<ExtraCommands>
+					<Add before='qmake -makefile -o $makefile &quot;CONFIG+=debug&quot; &quot;CONFIG+=console&quot; &quot;DESTDIR=debug&quot;' />
 					<Add before='qmake -makefile -o $makefile &quot;CONFIG+=debug&quot; &quot;DESTDIR=debug&quot;' />
 				</ExtraCommands>
 				<MakeCommands>
