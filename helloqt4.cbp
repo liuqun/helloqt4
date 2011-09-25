@@ -47,7 +47,7 @@
 					<Add option="-s" />
 				</Linker>
 				<ExtraCommands>
-					<Add before='qmake -makefile -o $makefile &quot;DESTDIR=release&quot;' />
+					<Add before='qmake -makefile -o $makefile &quot;CONFIG+=release&quot; &quot;DESTDIR=release&quot;' />
 				</ExtraCommands>
 				<MakeCommands>
 					<Build command="$make -f $makefile" />
